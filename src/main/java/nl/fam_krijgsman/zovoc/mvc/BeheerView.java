@@ -38,12 +38,12 @@ class BeheerView extends JFrame {
         this.addLidPanel = new AddLidPanel();
         this.headerPanel = new HeaderPanel(this.userName);
 
-        //Maak switch panel en voeg welcomePanel toe al welkom bericht
+        //Maak switch panel en voeg welcomePanel toe als welkom bericht
         this.switchPanel = new JLayeredPane();
         this.switchPanel.setLayout(new GridLayout(1, 1));
         this.switchPanel.add(welcomePanel);
 
-        //Maak BorderLayour en voeg de elementen toe
+        //Maak BorderLayout en voeg de elementen toe
         this.setLayout(new BorderLayout());
         this.add(this.headerPanel, BorderLayout.NORTH);
         this.add(this.switchPanel, BorderLayout.CENTER);

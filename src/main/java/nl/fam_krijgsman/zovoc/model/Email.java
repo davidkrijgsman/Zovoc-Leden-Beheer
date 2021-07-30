@@ -18,7 +18,7 @@ public class Email {
         if (isValideEmail(email)) {
             this.email = email;
         } else {
-            throw new IllegalArgumentException("Geen valide email-adres");
+            throw new IllegalArgumentException("Geen valide e-mailadres");
         }
     }
 

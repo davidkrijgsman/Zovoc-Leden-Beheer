@@ -47,7 +47,7 @@ class UserLoginController {
                     userLoginView.dispose();
                     Beheer.startBeheer(userLoginModel);
                 } else {
-                    userLoginView.displayErrorMessage("User and / or password are in correct.");
+                    userLoginView.displayErrorMessage("User and / or password are in correct."); // Nederlands?
                     userLoginView.setUserField("");
                     userLoginView.setPassField("");
                     userLoginView.focusUserField();

@@ -61,6 +61,7 @@ public class Lid {
     }
 
     public void setAchterNaam(String achterNaam) {
+		// Deze check wordt in verschillende setters gedaan, utility functie van maken?
         if ((achterNaam == null) || (achterNaam.isEmpty())) {
             throw new IllegalArgumentException("Achternaam mag niet leeg zijn");
         }
@@ -79,6 +80,7 @@ public class Lid {
     }
 
     public void setTelefoonNummer(String telefoonNummer) {
+		// Is deze check echt nodig? Kun je niet altijd nieuwe instantie maken als telefoonNummer != null ipv setTelefoonNummer?
         if ((this.telefoonNummer != null) && (telefoonNummer != null)) {
             this.telefoonNummer.setTelefoonNummer(telefoonNummer);
         } else if ((this.telefoonNummer == null) && (telefoonNummer != null)) {
@@ -89,6 +91,7 @@ public class Lid {
     }
 
     public void setEmail(String email) {
+		// Zie opmerking bij setTelefoonNummer
         if ((this.email != null) && (email != null)) {
             this.email.setEmail(email);
         } else if ((this.email == null) && (email != null)) {
@@ -104,7 +107,7 @@ public class Lid {
         if (currentYear > geboorteJaar) {
             this.geboorteJaar = geboorteJaar;
         } else {
-            throw new IllegalArgumentException("Geboorte jaar moet voor huidige jaar liggen");
+            throw new IllegalArgumentException("Geboortejaar moet voor huidige jaar liggen");
         }
     }
 

@@ -34,6 +34,7 @@ public class Team {
         this.geslacht = geslacht;
     }
 
+	// Misschien volgorde van getters aanhouden?
     public void setNaam(String naam) {
         if ((naam == null) || (naam.isEmpty())) {
             throw new IllegalArgumentException("Team naam mag niet leeg zijn");
@@ -43,20 +44,19 @@ public class Team {
     }
 
     public boolean magInTeam(eGeslacht geslacht, int geboorteJaar) {
-        boolean isGoedeLeeftijd = false;
-        boolean isGoedeGeslacht = false;
-        if (this.klasse.equals(eKlasse.JUNIOR)) {
+		// Lid moet van geslacht zijn dat aan het team is toegekend of het moet een eGeslacht.MIX team zijn
+		if (!this.geslacht.equals(geslacht) && !this.geslacht.equals(eGeslacht.MIX)) {
+			// early return voorkomt onnodige executie van resterende code
+			return false;
+		}
+
+		if (this.klasse.equals(eKlasse.JUNIOR)) {
             // Lid moet jonger zijn dan 18 voor junior klasse
+			// DK: geen exacte datum nodig?
             int currentYear = Year.now().getValue();
-            if ((currentYear - geboorteJaar) < 18) {
-                isGoedeLeeftijd = true;
-            }
-        } else {
-            isGoedeLeeftijd = true;
+            return (currentYear - geboorteJaar) < 18
         }
-        if ((this.geslacht.equals(geslacht)) || this.geslacht.equals(eGeslacht.MIX)) {
-            isGoedeGeslacht = true;
-        }
-        return ((isGoedeGeslacht) && (isGoedeLeeftijd));
+
+		return true
     }
 }

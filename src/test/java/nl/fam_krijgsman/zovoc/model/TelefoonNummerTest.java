@@ -52,8 +52,8 @@ class TelefoonNummerTest {
     @ParameterizedTest
     @DisplayName("Foute telefoonnummers")
     @ValueSource(strings = {"06-1234-5678", //An extra dash is not allowed
-            "06 123456789", //To long
-            "06 1234567", //To short
+            "06 123456789", //Too long
+            "06 1234567", //Too short
             "+31(06) 123 45678", //Invalid optional declaration
             "1234567", //(without regional number)
             "112", //(emergency number)"

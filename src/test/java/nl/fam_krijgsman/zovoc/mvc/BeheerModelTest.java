@@ -59,7 +59,7 @@ class BeheerModelTest {
     }
 
     @Test
-    @DisplayName("Team: Valideeer kolom classes")
+    @DisplayName("Team: Valideer kolom classes")
     void getTeamModelColumnClasses() {
         Assertions.assertAll(
                 () -> assertEquals(String.class, teamModel.getColumnClass(0)),
